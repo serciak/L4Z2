@@ -22,12 +22,12 @@ public class InfiniteStack<T> implements StackInterface<T> {
     @Override
     public T pop() throws EmptyStackException {
         if(tempSize == 0) throw new EmptyStackException();
-        tempSize--;
+        --tempSize;
         return list.remove(0);
     }
 
     @Override
-    public void push(T elem) throws FullStackException {
+    public void push(T elem) {
         list.add(0, elem);
         tempSize++;
     }
